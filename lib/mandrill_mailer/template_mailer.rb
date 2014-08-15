@@ -253,7 +253,7 @@ module MandrillMailer
       # Construct message hash
       self.message = {
         "subject" => args[:subject],
-        "from_email" => args[:from] || self.class.defaults[:from],
+        "from_email" => args[:from] || args[:from_email] || self.class.defaults[:from],
         "from_name" => args[:from_name] || self.class.defaults[:from_name] || self.class.defaults[:from],
         "to" => args[:to],
         "headers" => args[:headers],
